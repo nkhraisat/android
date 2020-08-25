@@ -22,12 +22,12 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class signup extends AppCompatActivity {
-    EditText email, password, fname, lname, con_pass;
+    EditText email, password, fname, lname, con_pass,num;
     private FirebaseAuth mAuth;
 
     FirebaseDatabase database;
     DatabaseReference myRef;
-int uid=0;
+int uid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +39,8 @@ int uid=0;
         email = (EditText) findViewById(R.id.email);
         password = (EditText) findViewById(R.id.password_signup);
         con_pass = (EditText) findViewById(R.id.con_pass);
+        num = (EditText) findViewById(R.id.phone_num);
+        uid=0;
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference("database").child("users");
         mAuth = FirebaseAuth.getInstance();
@@ -56,7 +58,7 @@ int uid=0;
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for(DataSnapshot snapshot : dataSnapshot.getChildren()){
                   try{  register p =snapshot.getValue(register.class);
-                   if(uid<Integer.parseInt(p.getUid()))
+                   if(uid<=Integer.parseInt(p.getUid()))
                        uid=Integer.parseInt(p.getUid())+1;}catch (Exception e){Toast.makeText(getApplicationContext(),e+"",Toast.LENGTH_LONG).show();}
                 }
 
@@ -90,7 +92,9 @@ int uid=0;
                                 if (!c_pass.equals(pass)) {
                                     con_pass.setError("password not match!");
                                 }
-
+                                if (!num.getText().toString().isEmpty()) {
+                                    con_pass.setError("please enter your phone number");
+                                }
 
                             }
                         }
@@ -102,6 +106,7 @@ int uid=0;
         if (!email_r.isEmpty()) {
 
             if (!pass.isEmpty()) {
+                if(!num.getText().toString().isEmpty())
                 if (!firstN.isEmpty()) {
                     if (!lastN.isEmpty()) {
                         if (email_r.contains("@")) {
@@ -122,8 +127,8 @@ int uid=0;
                                                             cat.putExtra("nn",String.valueOf(uid));
                                                             startActivity(cat);
                                                             finish();
-                                                            register r1 = new register(String.valueOf(uid),email_r, pass,firstN, lastN );
-                                                            myRef.push().setValue(r1);
+                                                            register r1 = new register(email_r,pass, firstN, lastN ,String.valueOf(uid),num.getText().toString(),"0","0");
+                                                            myRef.child(String.valueOf(uid)).setValue(r1);
                                                             Toast.makeText(signup.this, "welcome to ISTORE family " + firstN + " ^-^", Toast.LENGTH_SHORT).show();
 
 

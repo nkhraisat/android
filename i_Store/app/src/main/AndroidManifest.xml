@@ -1,32 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.i_store">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/carticon"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/carticon"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".productdeteals"></activity>
-        <activity android:name=".addproduct" />
+        android:theme="@style/AppTheme"
+        tools:ignore="ExtraText">
+        <activity android:name=".report"></activity>
+        <activity android:name=".image" />
+        <activity android:name=".update_password" />
+        <activity android:name=".videogames" />
+        <activity android:name=".ui.home.alllproducts" />
         <activity
             android:name=".category"
             android:label="@string/title_activity_category"
-            android:theme="@style/AppTheme.NoActionBar">
-
-
-        </activity>
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".productdeteals" />
+        <activity android:name=".addproduct" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".books" />
         <activity android:name=".cars" />
         <activity android:name=".computers" />
@@ -37,9 +36,19 @@
         <activity android:name=".phones" />
         <activity android:name=".signup" />
         <activity android:name=".watches" />
-        <activity android:name=".splash" />
+        <activity android:name=".splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".sports" />
         <activity android:name=".Fashion" />
+
+
+
     </application>
+
 
 </manifest>

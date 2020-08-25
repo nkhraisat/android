@@ -21,4 +21,8 @@ public class ForgetPassword extends AppCompatActivity {
         Intent intent = new Intent( getApplicationContext() , category.class );
         startActivity( intent );
     }
+
+    public void reset1(View view) {
+        Toast.makeText(this, "we send to your email a link to reset your password", Toast.LENGTH_SHORT).show();
+    }
 }

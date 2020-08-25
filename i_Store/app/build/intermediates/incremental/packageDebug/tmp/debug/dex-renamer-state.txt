@@ -1,0 +1,4 @@
+#Mon May 18 01:29:46 EEST 2020
+base.0=G\:\\project graduation\\i_Store-20200506T114134Z-001\\i_Store\\app\\build\\intermediates\\dex\\debug\\out\\classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

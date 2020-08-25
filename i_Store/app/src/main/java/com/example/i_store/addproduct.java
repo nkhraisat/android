@@ -4,10 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.MimeTypeMap;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -16,8 +18,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -31,7 +35,7 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 public class addproduct extends AppCompatActivity {
-    StorageReference sref;
+    private StorageReference mStorageRef;
     FirebaseAuth mAuth;
     FirebaseDatabase database;
     DatabaseReference myRef;
@@ -44,15 +48,15 @@ public class addproduct extends AppCompatActivity {
     final static int p=1;
     Uri imaguri;
     ImageView iv;
-
-
+    String Imageurl;
+    String email;
+String imageName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addproduct);
 
-
-        sref = FirebaseStorage.getInstance().getReference("uploads");
+        Imageurl="";
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference("database").child("products");
         ram=(EditText)findViewById(R.id.ram);
@@ -96,6 +100,8 @@ public class addproduct extends AppCompatActivity {
         subcat = (EditText) findViewById(R.id.subcategory);
 
         uid = getIntent().getStringExtra("nn");
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+         email=user.getEmail();
 
         ArrayList items = new ArrayList();
 
@@ -191,7 +197,6 @@ public class addproduct extends AppCompatActivity {
 
 
                 }
-                Toast.makeText(getApplicationContext(), "product id is :" + pid, Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -199,7 +204,25 @@ public class addproduct extends AppCompatActivity {
 
             }
         });
+        //getting user id
+        FirebaseDatabase.getInstance().getReference().child("database").child("users").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    register p = snapshot.getValue(register.class);
 
+                    if (email.equals(p.getEmail()))
+                    {uid=p.getUid();}
+
+
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
         //visabillity
         s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -455,7 +478,7 @@ try {
         color=pcolor.getText().toString();
         des=pdes.getText().toString();
         String cat =s.getSelectedItem().toString();
-
+upload();
 
             if (s.getSelectedItem().equals("Cars")) {
                 if(name.isEmpty())
@@ -483,8 +506,8 @@ try {
                     price.setError(" please fill the product priec !");
                 }
                 if(!name.isEmpty()&&!model.isEmpty()&&!city.getText().toString().isEmpty()&&!brand.getText().toString().isEmpty()&&!price.getText().toString().isEmpty()&&!subcat.getText().toString().isEmpty()) {
-                    product p = new product(cat, name, model, color, des, uid.toString(), city.getText().toString(), brand.getText().toString(), price.getText().toString(), stat.getSelectedItem().toString(), subcat.getText().toString(), tran.getSelectedItem().toString(), fue.getSelectedItem().toString(), imaguri+"", String.valueOf(pid));
-                    myRef.push().setValue(p);
+                    product p = new product(cat, name, model, color, des,  city.getText().toString(),uid, brand.getText().toString(), price.getText().toString(), stat.getSelectedItem().toString(), subcat.getText().toString(), tran.getSelectedItem().toString(), fue.getSelectedItem().toString(), imageName, String.valueOf(pid));
+                    myRef.child(String.valueOf(pid)).setValue(p);
                     Toast.makeText(getApplicationContext(),"product added successfully",Toast.LENGTH_LONG).show();
                     Intent i= new Intent(getApplicationContext(),category.class);
                     startActivity(i);
@@ -493,8 +516,8 @@ try {
             }
             else if (s.getSelectedItem().equals("Video games"))
             {
-                product p = new product( cat,  name,  color,  des,  uid,  city.getText().toString(),  brand.getText().toString(),  storage.getText().toString(),  price.getText().toString(),  stat.getSelectedItem().toString(),  subcat.getText().toString(),  imaguri+"",  String.valueOf(pid)) ;
-                myRef.push().setValue(p);
+                product p = new product( cat,  name,  color,  des,  uid,  city.getText().toString(),  brand.getText().toString(),  storage.getText().toString(),  price.getText().toString(),  stat.getSelectedItem().toString(),  subcat.getText().toString(),  imageName,  String.valueOf(pid)) ;
+                myRef.child(String.valueOf(pid)).setValue(p);
                 Toast.makeText(getApplicationContext(),"product added successfully",Toast.LENGTH_LONG).show();
                 Intent i= new Intent(getApplicationContext(),category.class);
                 startActivity(i);
@@ -503,8 +526,8 @@ try {
 
             }else if (s.getSelectedItem().equals("Phones"))
             {
-                product p = new product( cat,  name,  model,  color,  des,  uid,  city.getText().toString(),  brand.getText().toString(),  storage.getText().toString(),  price.getText().toString(),  stat.getSelectedItem().toString(),  subcat.getText().toString(),  imaguri+"",  size.getText().toString(),  cam.getText().toString(), String.valueOf( pid),ram.getText().toString());
-                myRef.push().setValue(p);
+                product p = new product( cat,  name,  model,  color,  des,  uid,  city.getText().toString(),  brand.getText().toString(),  storage.getText().toString(),  price.getText().toString(),  stat.getSelectedItem().toString(),  subcat.getText().toString(),  imageName,  size.getText().toString(),  cam.getText().toString(), String.valueOf( pid),ram.getText().toString());
+                myRef.child(String.valueOf(pid)).setValue(p);
                 Toast.makeText(getApplicationContext(),"product added successfully",Toast.LENGTH_LONG).show();
                 Intent i= new Intent(getApplicationContext(),category.class);
                 startActivity(i);
@@ -512,8 +535,8 @@ try {
 
             }else if (s.getSelectedItem().equals("Watches"))
             {
-                product p = new product( cat,  name,  color,  des,  uid,  city.getText().toString(),  brand.getText().toString(),  price.getText().toString(),  stat.getSelectedItem().toString(), imaguri+"",  wtype.getSelectedItem().toString(), String.valueOf(pid));
-                myRef.push().setValue(p);
+                product p = new product( cat,  name,  color,  des,  uid,  city.getText().toString(),  brand.getText().toString(),  price.getText().toString(),  stat.getSelectedItem().toString(), imageName,  wtype.getSelectedItem().toString(), String.valueOf(pid));
+                myRef.child(String.valueOf(pid)).setValue(p);
                 Toast.makeText(getApplicationContext(),"product added successfully",Toast.LENGTH_LONG).show();
                 Intent i= new Intent(getApplicationContext(),category.class);
                 startActivity(i);
@@ -522,8 +545,8 @@ try {
             }else if (s.getSelectedItem().equals("Computers"))
 
             {
-                product p = new product( cat,  name,  des, uid,  city.getText().toString(),  brand.getText().toString(),  storage.getText().toString(),  price.getText().toString(),  stat.getSelectedItem().toString(),  "",  size.getText().toString(),  ram.getText().toString(),  cpu.getSelectedItem().toString(),  gpu.getText().toString(),  gen.getSelectedItem().toString(), String.valueOf(pid));
-                myRef.push().setValue(p);
+                product p = new product( cat,  name,  des, uid,  city.getText().toString(),  brand.getText().toString(),  storage.getText().toString(),  price.getText().toString(),  stat.getSelectedItem().toString(),  imageName,  size.getText().toString(),  ram.getText().toString(),  cpu.getSelectedItem().toString(),  gpu.getText().toString(),  gen.getSelectedItem().toString(), String.valueOf(pid));
+                myRef.child(String.valueOf(pid)).setValue(p);
                 Toast.makeText(getApplicationContext(),"product added successfully",Toast.LENGTH_LONG).show();
                 Intent i= new Intent(getApplicationContext(),category.class);
                 startActivity(i);
@@ -531,9 +554,8 @@ try {
 
 
             }
-            if(imaguri!=null){
-                sref.putFile(imaguri);
-        }}
+
+        }
 
 
 
@@ -556,4 +578,32 @@ try {
 
         }
     }
+    private String getExteintion(Uri uri)
+    {
+        ContentResolver cr=getContentResolver();
+        MimeTypeMap mime=MimeTypeMap.getSingleton();
+        return  mime.getExtensionFromMimeType(cr.getType(uri));
+        }
+        private void upload()
+        {
+            if(imaguri!=null){
+                mStorageRef = FirebaseStorage.getInstance().getReference("images");
+                imageName=System.currentTimeMillis()+"."+getExteintion(imaguri);
+               StorageReference ref = mStorageRef.child(imageName);
+                ref.putFile(imaguri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                        Imageurl =taskSnapshot.getUploadSessionUri().toString().trim();
+
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(getApplicationContext(),"error while uploading image",Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+
+        }
+}
 }

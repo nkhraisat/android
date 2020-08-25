@@ -5,9 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -34,6 +37,24 @@ public class phones extends AppCompatActivity {
         in=new ArrayList<>();
 
         arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, arr);
+        EditText et =findViewById(R.id.search);
+        et.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                arrayAdapter.getFilter().filter(s);
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
 
         ref= FirebaseDatabase.getInstance().getReference().child("database").child("products");
         FirebaseDatabase.getInstance().getReference().child("database").child("products").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -55,7 +76,6 @@ public class phones extends AppCompatActivity {
                     });
                 }
                 lv.setAdapter(arrayAdapter);
-                Toast.makeText(getApplicationContext(),"data inserted"+in,Toast.LENGTH_SHORT).show();
             }
 
             @Override

@@ -25,9 +25,9 @@
             android:textSize="40dp" />
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="200dp"
             android:id="@+id/primage"
-            android:visibility="gone"
+            android:onClick="onclickimg"
 
             />
 
@@ -36,6 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:orientation="horizontal">
+
 
             <TextView
                 android:layout_width="wrap_content"
@@ -82,7 +83,7 @@
             android:visibility="gone"
 
             android:layout_height="wrap_content"
-            android:text="product name"
+            android:text=" name"
             android:textColor="#000000"
 
             android:textSize="20dp"
@@ -100,7 +101,7 @@
                 android:id="@+id/tvpbrand"
                 android:layout_height="wrap_content"
                 android:visibility="gone"
-                android:text="car brand :          "
+                android:text="brand :          "
                 android:textSize="20dp"
                 android:textColor="#000000"
 
@@ -140,7 +141,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/prcategory"
-                android:text="product category"
+                android:text="category"
                 android:textColor="#000000"
                 android:visibility="gone"
 
@@ -159,7 +160,7 @@
                 android:visibility="gone"
                 android:id="@+id/tvpmodel"
                 android:layout_height="wrap_content"
-                android:text="product model :        "
+                android:text="model : "
                 android:textSize="20dp"
                 android:textColor="#000000"
 
@@ -187,7 +188,7 @@
                 android:layout_width="wrap_content"
                 android:id="@+id/tvpcolor"
                 android:layout_height="wrap_content"
-                android:text="product color :          "
+                android:text="color: "
                 android:textSize="20dp"
                 android:textColor="#000000"
 
@@ -216,7 +217,7 @@
                 android:layout_width="wrap_content"
                 android:id="@+id/tvptrans"
                 android:layout_height="wrap_content"
-                android:text="transmision :          "
+                android:text="transmision :  "
                 android:textSize="20dp"
                 android:textColor="#000000"
 
@@ -244,7 +245,7 @@
             android:layout_width="wrap_content"
             android:id="@+id/tvpfuel"
             android:layout_height="wrap_content"
-            android:text="car fuel :                     "
+            android:text="fuel :  "
             android:textSize="20dp"
             android:textColor="#000000"
 
@@ -272,7 +273,7 @@
             android:layout_width="wrap_content"
             android:id="@+id/tvpstatus"
             android:layout_height="wrap_content"
-            android:text="pcar status :          "
+            android:text="status : "
             android:textSize="20dp"
             android:textColor="#000000"
 
@@ -294,7 +295,7 @@
             android:layout_width="wrap_content"
             android:id="@+id/TVSUB"
             android:layout_height="wrap_content"
-            android:text="subcategory :        "
+            android:text="subcategory :  "
             android:visibility="gone"
             android:textSize="20dp"
             android:textColor="#000000"
@@ -600,7 +601,105 @@
                 android:textSize="20dp"
                 />
 
+
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:text="seller number:           "
+                android:textSize="20dp"
+                android:textColor="#000000"
+
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="number"
+                android:layout_marginLeft="20dp"
+                android:id="@+id/number"
+                android:textColor="#000000"
+
+                android:textSize="20dp"
+                />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:text="price :           "
+                android:textSize="20dp"
+                android:textColor="#000000"
+
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_marginLeft="20dp"
+                android:id="@+id/price"
+                android:textColor="#000000"
+
+                android:textSize="20dp"
+                />
+
+
+        </LinearLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:id="@+id/remove"
+            android:visibility="gone"
+            android:text="remove product"
+            android:layout_gravity="center"
+            android:onClick="remove1"
+             />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="call now"
+            android:visibility="gone"
+            android:id="@+id/call"
+            android:background="@color/c1"
+            android:onClick="call"/>
+
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:id="@+id/star_rate"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="submit"
+            android:id="@+id/submit"
+            android:onClick="submit"
+            tools:ignore="OnClick" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="Report"
+            android:onClick="report"/>
 
     </LinearLayout>
 </ScrollView>

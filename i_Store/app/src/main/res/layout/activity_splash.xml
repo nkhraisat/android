@@ -6,12 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".splash">
 
-<LinearLayout
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 android:orientation="vertical"
     >
 
-</LinearLayout>
+    <ImageView
+        android:layout_width="187dp"
+        android:layout_height="194dp"
+        android:layout_centerInParent="true"
+        android:id="@+id/pic"
+        android:src="@drawable/sasaas" />
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bar"
+        android:layout_below="@+id/pic"
+        android:layout_marginTop="70dp"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

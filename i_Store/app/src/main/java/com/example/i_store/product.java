@@ -79,7 +79,7 @@ public class product {
 
 //consructor for car
 
-    public product(String category, String name, String model, String color, String desc, String uid, String city, String brand, String price, String status, String subcategory, String trans, String fuel, String image, String id) {
+    public product(String category, String name, String model, String color, String desc,  String city,String uid, String brand, String price, String status, String subcategory, String trans, String fuel, String image, String id) {
         this.category = category;
         this.name = name;
         this.model = model;

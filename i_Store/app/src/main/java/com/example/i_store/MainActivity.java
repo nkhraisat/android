@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     String log_pass;
      FirebaseAuth mAuth;
      String uid;
+    Intent cat;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = mAuth.getCurrentUser();
 
-        uid="1";
 
 
     }
@@ -62,17 +62,23 @@ public class MainActivity extends AppCompatActivity {
                                  if (task.isSuccessful()) {
                                      // Sign in success, update UI with the signed-in user's information
                                      FirebaseUser user = mAuth.getCurrentUser();
-                                     Toast.makeText(MainActivity.this, "login successfully :)"+uid,
+                                     Toast.makeText(MainActivity.this, "login successfully :)",
                                              Toast.LENGTH_SHORT).show();
-                                     Intent cat = new Intent(MainActivity.this, category.class);
+                                      cat = new Intent(MainActivity.this, category.class);
                                      FirebaseDatabase.getInstance().getReference().child("database").child("users").addListenerForSingleValueEvent(new ValueEventListener() {
                                          @Override
                                          public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                              for(DataSnapshot snapshot : dataSnapshot.getChildren()){
                                                  register p =snapshot.getValue(register.class);
                                                  if(p.getEmail().equals(log_email))
-                                                     uid=p.getUid();
-                                             }
+                                                 {    uid=p.getUid();
+                                                     cat.putExtra("nn",uid);
+
+
+                                                           startActivity(cat);
+                                                           finish();
+
+                                             }}
 
                                          }
 
@@ -81,9 +87,7 @@ public class MainActivity extends AppCompatActivity {
 
                                          }
                                      });
-                                     cat.putExtra("nn",uid);
-                                     startActivity(cat);
-                                     finish();
+
                                  } else {
                                      // If sign in fails, display a message to the user.
                                      Toast.makeText(MainActivity.this, "login faild :(",
