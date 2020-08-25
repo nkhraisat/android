@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/background"
+
+    android:layout_height="match_parent"
+    tools:context=".addproduct">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".signup">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add product"
+                android:textColor="#000000"
+                android:textSize="50dp"
+                android:gravity="center"
+                android:fontFamily="casual"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="City"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:layout_marginLeft="0dp"/>
+
+
+
+
+            <EditText
+                android:id="@+id/city"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="8dp"
+                android:background="#D3D3D3"
+                android:hint="Amman"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="category"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:layout_marginLeft="0dp"/>
+
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/sp"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:background="#D3D3D3"
+
+                ></androidx.appcompat.widget.AppCompatSpinner>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvname"
+                android:visibility="gone"
+                android:text="product Name"
+
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:layout_marginLeft="0dp"/>
+
+
+
+
+            <EditText
+                android:id="@+id/prname"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+
+                android:layout_height="45dp"
+                android:layout_marginTop="8dp"
+                android:background="#D3D3D3"
+                android:hint="product Name"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvcpu"
+                android:text="Processor"
+                android:textSize="20dp"
+                android:visibility="gone"
+
+                android:textColor="#000000"
+                android:layout_marginLeft="0dp"/>
+
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/Cpu"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:visibility="gone"
+
+                android:background="#D3D3D3"
+
+                ></androidx.appcompat.widget.AppCompatSpinner>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Generation "
+                android:id="@+id/tvgen"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:visibility="gone"
+                android:layout_marginLeft="0dp"/>
+
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/gen"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+
+                android:background="#D3D3D3"
+                android:visibility="gone"
+
+                ></androidx.appcompat.widget.AppCompatSpinner>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/tvbrand"
+
+                android:text="Brand"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:layout_marginLeft="0dp"/>
+
+
+
+
+            <EditText
+                android:id="@+id/brand"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+
+                android:layout_height="45dp"
+                android:layout_marginTop="8dp"
+                android:background="#D3D3D3"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/tvram"
+
+                android:text="Ram "
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:layout_marginLeft="0dp"/>
+
+
+
+
+            <EditText
+                android:id="@+id/ram"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+
+                android:layout_height="45dp"
+                android:layout_marginTop="8dp"
+                android:background="#D3D3D3"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/tvgpu"
+
+                android:text="GPU "
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:layout_marginLeft="0dp"/>
+
+
+
+
+            <EditText
+                android:id="@+id/gpu"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+
+                android:layout_height="45dp"
+                android:layout_marginTop="8dp"
+                android:background="#D3D3D3"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/tvsize"
+
+                android:text="Screen size "
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:layout_marginLeft="0dp"/>
+
+
+
+
+            <EditText
+                android:id="@+id/size"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+
+                android:layout_height="45dp"
+                android:layout_marginTop="8dp"
+                android:background="#D3D3D3"
+                />
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:id="@+id/tvcam"
+
+            android:text="camera"
+            android:textSize="20dp"
+            android:textColor="#000000"
+            android:layout_marginLeft="0dp"/>
+
+
+
+
+            <EditText
+                android:id="@+id/cam"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+
+                android:layout_height="45dp"
+                android:layout_marginTop="8dp"
+                android:background="#D3D3D3"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/tvsubcat"
+
+                android:text="subcategory"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:layout_marginLeft="0dp"/>
+
+
+
+
+            <EditText
+                android:id="@+id/subcategory"
+                android:visibility="gone"
+
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginTop="8dp"
+                android:background="#D3D3D3"
+                android:hint=""/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/tvwtype"
+
+                android:text="watch Type"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:layout_marginLeft="0dp"/>
+
+
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/wtype"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:background="#D3D3D3"
+                android:visibility="gone"
+
+                ></androidx.appcompat.widget.AppCompatSpinner>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/tvtrans"
+
+                android:text="Transmission Type"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:layout_marginLeft="0dp"/>
+
+
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/trans"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:background="#D3D3D3"
+                android:visibility="gone"
+
+                ></androidx.appcompat.widget.AppCompatSpinner>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/tvmodel"
+
+                android:text="model"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:layout_marginLeft="0dp"/>
+            <EditText
+                android:id="@+id/model"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="0dp"
+                android:visibility="gone"
+
+                android:layout_marginTop="0dp"
+                android:background="#D3D3D3"
+                android:hint="year"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:visibility="gone"
+                android:id="@+id/tvfuel"
+
+                android:text="Fuel type"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:layout_marginLeft="0dp"/>
+
+
+
+
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/fuel"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:background="#D3D3D3"
+                android:visibility="gone"
+
+
+                ></androidx.appcompat.widget.AppCompatSpinner>
+            <TextView
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+
+                android:id="@+id/tvstatus"
+                android:text="status"
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:layout_marginLeft="0dp"/>
+
+
+
+
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/status"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:background="#D3D3D3"
+                android:visibility="gone"
+
+
+                ></androidx.appcompat.widget.AppCompatSpinner>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="storage"
+                android:visibility="gone"
+                android:id="@+id/tvstorage"
+
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="0dp"/>
+            <EditText
+                android:id="@+id/storage"
+                android:visibility="gone"
+
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:hint="128G"
+                android:background="#D3D3D3"
+                android:layout_marginTop="0dp"
+                android:layout_marginHorizontal="0dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/tvcolor"
+
+                android:text="color"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="0dp"/>
+            <EditText
+                android:id="@+id/pcolor"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:visibility="gone"
+
+                android:hint="red"
+                android:background="#D3D3D3"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="6dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/tvprice"
+
+                android:text="price"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="0dp"/>
+            <EditText
+                android:id="@+id/price"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:hint=""
+                android:visibility="gone"
+
+                android:background="#D3D3D3"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="0dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/tvdesc"
+
+                android:text="descrption"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="0dp"/>
+            <EditText
+                android:id="@+id/desc"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:visibility="gone"
+
+                android:hint="descrption"
+                android:background="#D3D3D3"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="6dp"/>
+            <Button
+                android:id="@+id/chosephoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="chose photo"
+                android:onClick="chose"
+                android:layout_marginTop="20dp"
+                />
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:id="@+id/photo"/>
+            <Button
+                android:id="@+id/signup_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="add product"
+                android:onClick="add"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                />
+
+        </LinearLayout></ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

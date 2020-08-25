@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+
+    tools:context=".productdeteals">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:gravity="center"
+            android:text="product details"
+            android:textColor="#000000"
+            android:textSize="40dp" />
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:id="@+id/primage"
+            android:visibility="gone"
+
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:text="City :        "
+                android:visibility="visible"
+                android:textSize="20dp"
+                android:textColor="#000000"
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/CIty"
+                android:visibility="visible"
+
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+
+                android:textSize="20dp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:id="@+id/tvpname"
+            android:text="product name :        "
+            android:visibility="gone"
+            android:textSize="20dp"
+            android:textColor="#000000"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/prname"
+            android:visibility="gone"
+
+            android:layout_height="wrap_content"
+            android:text="product name"
+            android:textColor="#000000"
+
+            android:textSize="20dp"
+            />
+
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/tvpbrand"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:text="car brand :          "
+                android:textSize="20dp"
+                android:textColor="#000000"
+
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/bran"
+                android:textColor="#000000"
+                android:visibility="gone"
+
+                android:textSize="20dp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:visibility="gone"
+
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/tvpcat"
+                android:layout_height="wrap_content"
+                android:text="product category  : "
+                android:textSize="20dp"
+                android:textColor="#000000"
+
+                android:visibility="gone"
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/prcategory"
+                android:text="product category"
+                android:textColor="#000000"
+                android:visibility="gone"
+
+                android:textSize="20dp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/tvpmodel"
+                android:layout_height="wrap_content"
+                android:text="product model :        "
+                android:textSize="20dp"
+                android:textColor="#000000"
+
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="product model"
+                android:id="@+id/prmodel"
+                android:textColor="#000000"
+                android:visibility="gone"
+
+                android:textSize="20dp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/tvpcolor"
+                android:layout_height="wrap_content"
+                android:text="product color :          "
+                android:textSize="20dp"
+                android:textColor="#000000"
+
+                android:visibility="gone"
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="product color"
+                android:id="@+id/pcolor"
+                android:textColor="#000000"
+                android:visibility="gone"
+
+                android:textSize="20dp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/tvptrans"
+                android:layout_height="wrap_content"
+                android:text="transmision :          "
+                android:textSize="20dp"
+                android:textColor="#000000"
+
+                android:visibility="gone"
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/tr"
+                android:textColor="#000000"
+                android:visibility="gone"
+
+                android:textSize="20dp"
+                />
+
+        </LinearLayout> <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/tvpfuel"
+            android:layout_height="wrap_content"
+            android:text="car fuel :                     "
+            android:textSize="20dp"
+            android:textColor="#000000"
+
+            android:visibility="gone"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:id="@+id/fu"
+            android:textColor="#000000"
+            android:visibility="gone"
+
+            android:textSize="20dp"
+            />
+
+    </LinearLayout> <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/tvpstatus"
+            android:layout_height="wrap_content"
+            android:text="pcar status :          "
+            android:textSize="20dp"
+            android:textColor="#000000"
+
+            android:visibility="gone"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:id="@+id/st"
+            android:textColor="#000000"
+
+            android:textSize="20dp"
+            />
+
+    </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/TVSUB"
+            android:layout_height="wrap_content"
+            android:text="subcategory :        "
+            android:visibility="gone"
+            android:textSize="20dp"
+            android:textColor="#000000"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/SUBcat"
+            android:visibility="visible"
+
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+
+            android:textSize="20dp"
+            />
+        <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+
+        android:orientation="horizontal">
+
+
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/TVWT"
+                    android:layout_height="wrap_content"
+                    android:text="Watch type :          "
+                    android:textSize="20dp"
+                    android:textColor="#000000"
+
+                    android:visibility="gone"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="sa"
+                    android:id="@+id/WT"
+                    android:textColor="#000000"
+                    android:visibility="gone"
+
+                    android:textSize="20dp"
+
+                    />
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/TVSIZE"
+                android:layout_height="wrap_content"
+                android:text="screen size :          "
+                android:textSize="20dp"
+                android:textColor="#000000"
+
+                android:visibility="gone"
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/SIZE"
+                android:textColor="#000000"
+
+                android:textSize="20dp"
+                />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/tvcamera"
+                    android:layout_height="wrap_content"
+                    android:text="pcar status :          "
+                    android:textSize="20dp"
+                    android:textColor="#000000"
+
+                    android:visibility="gone"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/camera"
+                    android:textColor="#000000"
+
+                    android:textSize="20dp"
+                    />
+
+            </LinearLayout><LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/TVstorage"
+                android:layout_height="wrap_content"
+                android:text="pcar status :          "
+                android:textSize="20dp"
+                android:textColor="#000000"
+
+                android:visibility="gone"
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/STorage"
+                android:textColor="#000000"
+
+                android:textSize="20dp"
+                />
+
+        </LinearLayout><LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/TVCpu"
+                android:layout_height="wrap_content"
+                android:text="pcar status :          "
+                android:textSize="20dp"
+                android:textColor="#000000"
+
+                android:visibility="gone"
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/CPU"
+                android:textColor="#000000"
+
+                android:textSize="20dp"
+                />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:id="@+id/TVram"
+                    android:layout_height="wrap_content"
+                    android:text="Ram :          "
+                    android:textSize="20dp"
+                    android:textColor="#000000"
+
+                    android:visibility="gone"
+
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:id="@+id/RAM"
+                    android:textColor="#000000"
+
+                    android:textSize="20dp"
+                    />
+
+            </LinearLayout><LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/TVgen"
+                android:layout_height="wrap_content"
+                android:text="generation :          "
+                android:textSize="20dp"
+                android:textColor="#000000"
+
+                android:visibility="gone"
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/GEN"
+                android:textColor="#000000"
+
+                android:textSize="20dp"
+                />
+
+        </LinearLayout><LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/TVGpu"
+                android:layout_height="wrap_content"
+                android:text="GPU :          "
+                android:textSize="20dp"
+                android:textColor="#000000"
+
+                android:visibility="gone"
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/GPU"
+                android:textColor="#000000"
+
+                android:textSize="20dp"
+                />
+
+        </LinearLayout>
+
+        </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/tvpdes"
+                android:layout_height="wrap_content"
+                android:text="description :            "
+                android:textSize="20dp"
+                android:textColor="#000000"
+                android:visibility="gone"
+
+
+                />
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/prdes"
+            android:text="product Description "
+            android:textColor="#000000"
+            android:visibility="gone"
+
+            android:textSize="20dp"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:text="inserted by :               "
+                android:textSize="20dp"
+                android:textColor="#000000"
+
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="name"
+                android:layout_marginLeft="20dp"
+                android:id="@+id/user"
+                android:textColor="#000000"
+
+                android:textSize="20dp"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
