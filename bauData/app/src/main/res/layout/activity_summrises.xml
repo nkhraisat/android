@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/oth"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".summrises">
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+
+        >
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            >
+
+
+            <Button
+                android:id="@+id/android"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:background="@drawable/br"
+                android:onClick="onclick3"
+                android:text="android"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+
+                />
+
+
+
+            <Button
+                android:id="@+id/web"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:background="@drawable/br"
+                android:onClick="onclick4"
+                android:text="web"
+                android:layout_below="@id/android"
+                android:layout_centerHorizontal="true"
+                />
+
+            <Button
+                android:id="@+id/database"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:background="@drawable/br"
+                android:onClick="onclick5"
+                android:text="data bases"
+                android:layout_below="@id/web"
+                android:layout_centerHorizontal="true"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BAU DATA"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:textSize="15dp">
+
+            </TextView>
+        </RelativeLayout>
+    </LinearLayout>
+    <!--noor aldeen khraisat-->
+</android.support.constraint.ConstraintLayout>

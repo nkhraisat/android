@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="visible"
+
+    android:background="@drawable/main"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <Button
+            android:id="@+id/avg"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@+id/about"
+            android:background="@drawable/br"
+            android:onClick="onclick7"
+            android:text="calculate average" />
+
+        <Button
+            android:id="@+id/sum"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+
+            android:layout_above="@+id/spec"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/br"
+            android:onClick="onclick1"
+            android:text="materials"
+
+
+            />
+
+        <Button
+            android:id="@+id/about"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+
+
+            android:layout_above="@id/des"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/br"
+            android:onClick="btn"
+            android:text="about university " />
+
+        <TextView
+            android:id="@+id/t1"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="BAU DATA" />
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:id="@+id/spec"
+            android:text="specialties"
+            android:onClick="sp"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@id/avg"
+            android:background="@drawable/br"
+            />
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:id="@+id/des"
+
+            android:text="descriotion"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/br"
+            android:onClick="desc"
+            />
+
+    </RelativeLayout>
+
+    <!--noor aldeen khraisat-->
+</android.support.constraint.ConstraintLayout>

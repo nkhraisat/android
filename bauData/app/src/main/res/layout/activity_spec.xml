@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".spec"
+    android:background="@drawable/oth"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Spinner
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/major"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/major_array"
+            android:prompt="@array/major_array"
+            >
+
+        </Spinner>
+        <TextView
+            android:layout_width="400dp"
+            android:layout_height="150dp"
+            android:id="@+id/tex"
+            android:text="no thing selected.."
+            android:layout_alignParentBottom="true"
+            />
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="description :"
+    android:textSize="20dp"
+    android:layout_above="@+id/tex"
+    />
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="30dp"
+            android:id="@+id/plan"
+            android:background="@drawable/br"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:text="the plan"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="to get the plan of major click on the button :"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            />
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

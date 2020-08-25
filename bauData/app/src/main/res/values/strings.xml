@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">bauData</string>
+    <string-array name="major_array">
+        <item>Choose Your Major...</item>
+        <item>SE</item>
+        <item>CS</item>
+        <item>CIS</item>
+
+    </string-array>
+
+</resources>

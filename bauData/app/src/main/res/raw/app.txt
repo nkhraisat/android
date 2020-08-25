@@ -1,0 +1,1 @@
+This application for university students, through which the student can find several topics and get slides or books for this topic, can also calculate the cumulative and quarterly average. You can also get an explanation of the disciplines and get the plan, and also contains a brief description of the university.
